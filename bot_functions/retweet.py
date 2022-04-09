@@ -1,6 +1,6 @@
 import credentials.setup
 import os
-from bot_functions.get_gif import get_gif()
+from bot_functions.get_gif import get_gif
 from textblob import TextBlob
 import time
 
