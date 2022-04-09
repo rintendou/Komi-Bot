@@ -26,7 +26,11 @@ def quote_on_enable():
             print('\n Tweeting: ' + '\n' + tweet)
             api.update_status(tweet)
             print("Next quote in 10 seconds.")
+<<<<<<< HEAD
             time.sleep(60)
+=======
+            time.sleep(10)
+>>>>>>> parent of 12a26c2 (sending gif function)
         except Exception as error:
             print(error)
             break
