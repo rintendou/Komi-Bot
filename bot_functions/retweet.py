@@ -9,7 +9,7 @@ gifs = get_gif()
 
 mention_id = 1
 
-bot_id = int(api.me().id_str)
+bot_id = int(api.verify_credentials().id_str)
 
 def retweet_on_enable():
     while True:
@@ -33,4 +33,4 @@ def retweet_on_enable():
                         print("Error.")
                 else:
                     api.retweet(api.update_status_with_media(status = "．．．" + "\n\n" + "Komi-Translation: " + "\n" + ':)', filename = os.path.join(os.path.dirname(__file__),'..','library',gifs[2])))
-            time.sleep(15)
+        time.sleep(15)
