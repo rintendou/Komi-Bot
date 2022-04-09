@@ -26,7 +26,7 @@ def quote_on_enable():
             print('\n Tweeting: ' + '\n' + tweet)
             api.update_status(tweet)
             print("Next quote in 10 seconds.")
-            time.sleep(10)
+            time.sleep(60)
         except Exception as error:
             print(error)
             break
