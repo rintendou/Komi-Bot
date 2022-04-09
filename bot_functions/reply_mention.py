@@ -7,6 +7,7 @@ def komi_reply():
     bot_id = int(api.verify_credentials().id_str)
     mention_id = 1
 
+    words = ["hi","komi"]
     message = "．．．@{}"
 
     while True:
@@ -19,12 +20,13 @@ def komi_reply():
             # that the mention tweet contains one of the words in our 'words' list
             # so that we can determine if the tweet might be a question.
             if mention.in_reply_to_status_id is None and mention.author.id != bot_id:
-                try:
-                    print("Attempting to reply...")
-                    api.update_status(message.format(mention.author.screen_name), in_reply_to_status_id = mention.id_str, auto_populate_reply_metadata = True)
-                    print("Successfully replied :)")
-                except Exception as exc:
-                    print(exc)
+                if True in [word in mention.text.lower() for word in words]:
+                    try:
+                        print("Attempting to reply...")
+                        api.update_status(message.format(mention.author.screen_name), in_reply_to_status_id = mention.id_str, auto_populate_reply_metadata = True)
+                        print("Successfully replied :)")
+                    except Exception as exc:
+                        print(exc)
         time.sleep(15) # The bot will only check for mentions every 15 seconds, unless you tweak this value
 
 

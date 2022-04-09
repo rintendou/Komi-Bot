@@ -1,8 +1,11 @@
 import credentials.setup
 import os
+from bot_functions.get_gif import get_gif()
 from textblob import TextBlob
+import time
 
 api = credentials.setup.setup()
+gifs = get_gif()
 
 mention_id = 1
 
@@ -24,4 +27,10 @@ def retweet_on_enable():
             if mention.in_reply_to_status_id is None and mention.author.id != bot_id:
                 if mention_polarity_score >= 0.3 and not mention.retweeted:
                     try:
-                        api.retweet(api.update_status_with_media(status = "．．．" + "\n\n" + "Komi-Translation: " + "\n" + ':)', filename = os.path.join(os.path.dirname(__file__),'..','library',gifs[1]) ))
+                        api.retweet(api.update_status_with_media(status = "．．．" + "\n\n" + "Komi-Translation: " + "\n" + ':)', filename = os.path.join(os.path.dirname(__file__),'..','library',gifs[0])))
+                        print("Retweeted.")
+                    except Exception as ex:
+                        print("Error.")
+                else:
+                    api.retweet(api.update_status_with_media(status = "．．．" + "\n\n" + "Komi-Translation: " + "\n" + ':)', filename = os.path.join(os.path.dirname(__file__),'..','library',gifs[2])))
+            time.sleep(15)

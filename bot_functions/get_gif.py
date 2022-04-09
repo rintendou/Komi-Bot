@@ -16,5 +16,6 @@ def get_gif():
         print(value)
 
     api.update_status_with_media(status = "",filename = os.path.join(os.path.dirname(__file__), '..', 'library',gifs[random.randint(0,len(gifs)-1)]))
+    return gifs
 
     
