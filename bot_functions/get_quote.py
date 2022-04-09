@@ -16,13 +16,13 @@ def get_quote():
 
     response = requests.get('http://api.forismatic.com/api/1.0/', parameters) # API which supplies quotes. Using parameters above to filter specific settings.
     text = json.loads(response.text) # Converting into JSON object
-    return text["quoteText"], text['quoteAuthor']
+    return text["quoteText"] #, text['quoteAuthor']
 
 def quote_on_enable():
     while True:
         try:
-            quote, author = get_quote()
-            tweet = quote + '\n' + '\n' + ' -' +  author
+            quote = get_quote()
+            tweet = "．．．" + "\n\n" + "Komi-Translation: " + "\n" + quote
             print('\n Tweeting: ' + '\n' + tweet)
             api.update_status(tweet)
             print("Next quote in 10 seconds.")
