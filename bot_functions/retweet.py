@@ -5,7 +5,6 @@ from textblob import TextBlob
 import time
 
 api = credentials.setup.setup()
-gifs = get_gif()
 
 mention_id = 1
 
@@ -27,10 +26,11 @@ def retweet_on_enable():
             if mention.in_reply_to_status_id is None and mention.author.id != bot_id:
                 if mention_polarity_score >= 0.3 and not mention.retweeted:
                     try:
-                        api.retweet(api.update_status_with_media(status = "．．．" + "\n\n" + "Komi-Translation: " + "\n" + ':)', filename = os.path.join(os.path.dirname(__file__),'..','library',gifs[0])))
+                        api.retweet(api.update_status(status = "．．．" + "\n\n" + "Komi-Translation: " + "\n" + ':)'))
                         print("Retweeted.")
                     except Exception as ex:
                         print("Error.")
+                        break
                 else:
-                    api.retweet(api.update_status_with_media(status = "．．．" + "\n\n" + "Komi-Translation: " + "\n" + ':)', filename = os.path.join(os.path.dirname(__file__),'..','library',gifs[2])))
+                    api.retweet(api.update_status(status = "．．．" + "\n\n" + "Komi-Translation: " + "\n" + ':(' ))
         time.sleep(15)
