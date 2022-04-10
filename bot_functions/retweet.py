@@ -38,4 +38,3 @@ def retweet_on_enable():
                         print(ex)
                         break
         time.sleep(15)
-
