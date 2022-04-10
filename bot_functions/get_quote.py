@@ -6,7 +6,7 @@ import time
 api = credentials.setup.setup()
 
 def get_quote(): 
-    parameters = {
+    parameters = { 
         'method' : 'getQuote',
         'lang' : 'en',
         'format' : 'json'
