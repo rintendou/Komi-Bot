@@ -9,9 +9,9 @@ Current Functions that Komi is capable of running:
 - Replying to user mentions containing keywords using GIFs.
 
 API's used to help create this project:
-<a href = "https://www.tweepy.org/"> Tweepy </a>/
-<a href = "https://www.forismatic.com/en/"> Forismatic </a>
-<a href = "https://textblob.readthedocs.io/en/dev/"> TextBlob</a>
+- <a href = "https://www.tweepy.org/"> Tweepy </a>/
+- <a href = "https://www.forismatic.com/en/"> Forismatic </a>
+- <a href = "https://textblob.readthedocs.io/en/dev/"> TextBlob</a>
 ### Credits: Danny Chen, Meredith Foe, Jason Ham, and Jerry Weng
 
 
