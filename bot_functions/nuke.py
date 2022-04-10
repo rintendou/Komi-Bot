@@ -1,17 +1,16 @@
 import credentials.setup
-api = credentials.setup.setup()
-def nuke():
-    #Grabbing ID of user
-    userID = int(api.verify_credentials().id_str)
+import tweepy
 
-    #Emulation of do-while loop
-    #Executes until timeline length is 0
-    while True:
-        #Grabs timeline of bot
-        tweets = api.user_timeline(screen_name = userID, count = 200, include_rts = False, tweet_mode = 'extended')
-        #Loops through each tweet ID and destroys it
-        for info in tweets:
-            api.destroy_status(info.id)
-        #Emulation of do-while loop
-        if tweets.len() != 0:
-            break
+api = credentials.setup.setup()
+
+def nuke():
+    print("You are about to delete all of Komi's tweets. Are you sure you want to continue? (Y/N)")
+    delete = input("> ")
+    if delete.lower() == 'y' or delete.upper() == 'Y':
+        for tweet in tweepy.Cursor(api.user_timeline).items():
+            try:
+                api.destroy_status(tweet.id)
+                print("Deleted: " + tweet.id)
+            except Exception:
+                print("Failed to delete: " + tweet.id)
+        
