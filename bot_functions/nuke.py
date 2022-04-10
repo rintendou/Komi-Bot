@@ -10,5 +10,4 @@ def nuke():
         for tweet in tweepy.Cursor(api.user_timeline).items():
                 api.destroy_status(tweet.id)
                 print("Deleted: " , tweet.id)
-            
-        
+        print("Successfully nuked Komi's timeline.")
