@@ -25,4 +25,5 @@ def reply_on_enable():
                         print("Successfully replied :)")
                     except Exception as exc:
                         print(exc)
+                        break
         time.sleep(15) # The bot will only check for mentions every 15 seconds, unless you tweak this value
