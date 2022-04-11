@@ -6,7 +6,8 @@
 
 Current Functions that Komi is capable of running:
 - Tweeting quotes in set intervals.
-- Replying to user mentions containing keywords using GIFs.
+- Replying to user mentions.
+- Retweeting and responding to mentions, depending on the polarity of said mentions.
 
 API's used to help create this project:
 - <a href = "https://www.tweepy.org/"> Tweepy </a>
