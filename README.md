@@ -1,6 +1,6 @@
 # Komi-Bot
 
-## A Twitter bot, Komi, created using Tweepy. Komi is able to interact with the Twitter community using custom built functions.
+## Komi is a Twitter bot primarily created using Tweepy. Komi is able to interact with the Twitter community using custom built functions.
 
 *NOTE: If you would like to use this repository as a template for your own Twitter bot, you will have to rename "setup_public.py" to "setup.py" and fill in the information accordingly.*
 
