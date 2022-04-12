@@ -5,7 +5,7 @@ from textblob import TextBlob
 api = credentials.setup.setup()
 
 class Mention:
-    def mention_reply_enable(self):
+    def mention_reply(self):
         bot_id = int(api.verify_credentials().id_str)
         mention_id = 1
         message = "@{} ．．．"
@@ -28,7 +28,7 @@ class Mention:
                     break
         time.sleep(15) # The bot will only check for mentions every 15 seconds, unless you tweak this value
 
-    def reply_mention_retweet(self): # Spaghetti code.
+    def mention_retweet(self): # Spaghetti code.
         mention_id = 1 # Starting from first item in mention stack
         bot_id = int(api.verify_credentials().id_str) # Grabbing Bot ID
 
