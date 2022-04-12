@@ -3,6 +3,7 @@ import tweepy
 
 api = credentials.setup.setup()
 bot_id = int(api.verify_credentials().id_str)
+
 class Moderation:
     def nuke(self):
         tweets = api.user_timeline(count = 200) # Only returns past 20 tweets. Figuring out a way to improve this.
