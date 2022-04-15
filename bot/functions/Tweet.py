@@ -1,6 +1,6 @@
 from fileinput import filename
 from gzip import GzipFile # Not used currently, could be useful
-from credentials import setup
+from bot.credentials import setup
 import requests
 import json
 import random

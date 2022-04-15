@@ -1,4 +1,4 @@
-from credentials import setup
+from bot.credentials import setup
 import time 
 import tweepy
 from textblob import TextBlob

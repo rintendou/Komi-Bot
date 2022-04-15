@@ -1,4 +1,4 @@
-from credentials import setup
+from bot.credentials import setup
 import tweepy
 
 api = setup.setup()
