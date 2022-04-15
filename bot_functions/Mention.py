@@ -17,7 +17,7 @@ class Mention:
             mention_id = mention.id
             # Checking if the mention tweet is not a reply, we are not the author, and
             # that the mention tweet contains one of the words in our 'words' list
-            # so that we can determine if the tweet might be a question.
+            # so that we can determine if the tweet might be a question
             if mention.in_reply_to_status_id is None and mention.author.id != bot_id:
                 try:
                     print("Attempting to reply...")
